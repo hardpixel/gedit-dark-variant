@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python3
+Module=dark_variant
+IAge=3
+Name=Dark Variant
+Description=Use dark variant of active GTK theme.
+Authors=Jonian Guveli <jonian@hardpixel.eu>
+Copyright=Copyright © 2016 Hardpixel
+Website=http://hardpixel.eu
