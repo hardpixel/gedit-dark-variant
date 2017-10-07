@@ -7,15 +7,16 @@ from gi.repository import GObject, Gtk, Gedit
 
 class DarkVariantAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-	app = GObject.property(type=Gedit.App)
+  app = GObject.property(type=Gedit.App)
 
-	def __init__(self):
-		GObject.Object.__init__(self)
+  def __init__(self):
+    GObject.Object.__init__(self)
 
-		self._settings = Gtk.Settings.get_default()
+    self._settings = None
 
-	def do_activate(self):
-		self._settings.set_property('gtk-application-prefer-dark-theme', True)
+  def do_activate(self):
+    self._settings = Gtk.Settings.get_default()
+    self._settings.set_property('gtk-application-prefer-dark-theme', True)
 
-	def do_deactivate(self):
-		self._settings.set_property('gtk-application-prefer-dark-theme', False)
+  def do_deactivate(self):
+    self._settings.set_property('gtk-application-prefer-dark-theme', False)
